@@ -1,0 +1,30 @@
+
+{% extends "blog/base.html" %}
+{% block content  %}
+
+ <!-- Blog Entries Column -->
+        <div class="col-md-8">
+            <br><br>
+          <h1 class="my-4">
+            <small>Secondary Text</small>
+          </h1>
+
+{% for post in posts %}
+           <!-- Blog Post -->
+      <div class="card mb-4">
+        <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+        <div class="card-body">
+          <h2 class="card-title">{{ post.title }}</h2>
+          <p class="card-text"><p>{{ post.content }}</p>
+          <a href="#" class="btn btn-primary">Read More &rarr;</a>
+        </div>
+        <div class="card-footer text-muted">
+          Posted on {{post.date_posted}} by
+          <a href="#">{{post.author}}</a>
+        </div>
+      </div>
+{% endfor  %}
+
+
+{% endblock content %}
+</div>
